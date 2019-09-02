@@ -1,10 +1,9 @@
-from django.urls import path, include
-from .views import index, logout, login, profile, register
-urlpatterns = [
-    path('', index, name='index'),
-    path('logout/', logout, name='logout'),
-    path('login/', login, name='login'),
-    path('profile/', profile),
-    path('register/', register, name='register')
-]
+from django.conf.urls import url, include
+from .views import register, profile, logout, login
 
+urlpatterns = [
+    url(r'^register/$', register, name='register'),
+    url(r'^profile/$', profile, name='profile'),
+    url(r'^logout/$', logout, name='logout'),
+    url(r'^login/$', login, name='login'),
+]
