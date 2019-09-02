@@ -1,14 +1,9 @@
-         ___        ______     ____ _                 _  ___  
-        / \ \      / / ___|   / ___| | ___  _   _  __| |/ _ \ 
-       / _ \ \ /\ / /\___ \  | |   | |/ _ \| | | |/ _` | (_) |
-      / ___ \ V  V /  ___) | | |___| | (_) | |_| | (_| |\__, |
-     /_/   \_\_/\_/  |____/   \____|_|\___/ \__,_|\__,_|  /_/ 
- ----------------------------------------------------------------- 
+# Django Ecommerce
 
+This is an ecommerce website built with Django. The website displays products. Users can add and remove products to/from their cart while also specifying the quantity of each item.
 
-Hi there! Welcome to AWS Cloud9!
+[![alt text](https://github.com/justdjango/django-ecommerce/blob/master/thumbnail.png "Logo")](https://youtu.be/z4USlooVXG0)
 
-To get started, create some files, play with the terminal,
-or visit https://docs.aws.amazon.com/console/cloud9/ for our documentation.
+[Watch the tutorial series here](https://youtu.be/z4USlooVXG0)
 
-Happy coding!
+[Become a better Django developer](https://www.justdjango.com)
