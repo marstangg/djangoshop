@@ -1,5 +1,6 @@
 import os
 from decouple import config
+import dj_database_url
 
 BASE_DIR = os.path.dirname(os.path.dirname(
     os.path.dirname(os.path.abspath(__file__))))
@@ -33,6 +34,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware'
+
 ]
 
 ROOT_URLCONF = 'djecommerce.urls'
@@ -82,3 +85,4 @@ LOGIN_REDIRECT_URL = '/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+DATABASES = {'default': dj_database_url.parse('postgres://svfgilawsqtkgd:2ebf7427fbb222594def4303bd257ce7debf08d11503d68402fdc4be3cc96778@ec2-174-129-229-106.compute-1.amazonaws.com:5432/d7b5271hpb2prj')}
