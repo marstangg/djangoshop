@@ -14,7 +14,7 @@ import random
 import string
 import stripe
 
-stripe.api_key = 'sk_test_7z4x0qY2e5rLyJyVcVYs3uyw008DV4INKZ'
+stripe.api_key = 'pk_live_vQHdZRsweoNg63U2tZTW21zX00wFXw1TKo'
 
 
 def create_ref_code():
