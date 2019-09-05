@@ -6,8 +6,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(
 
 SECRET_KEY = config('SECRET_KEY')
 
+
 INSTALLED_APPS = [
-    'django.contrib.admin',
+    'django.contrib.admin', 
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -20,8 +21,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'crispy_forms',
     'django_countries',
-    
-    'core'
+    'stripe',
+    'core',
 ]
 
 MIDDLEWARE = [
@@ -80,3 +81,4 @@ LOGIN_REDIRECT_URL = '/'
 # CRISPY FORMS
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+

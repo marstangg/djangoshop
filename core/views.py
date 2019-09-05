@@ -13,7 +13,8 @@ from .models import Item, OrderItem, Order, Address, Payment, Coupon, Refund, Us
 import random
 import string
 import stripe
-stripe.api_key = settings.STRIPE_SECRET_KEY
+
+stripe.api_key = 'sk_test_7z4x0qY2e5rLyJyVcVYs3uyw008DV4INKZ'
 
 
 def create_ref_code():
@@ -264,14 +265,14 @@ class PaymentView(View):
                 if use_default or save:
                     # charge the customer because we cannot charge the token more than once
                     charge = stripe.Charge.create(
-                        amount=amount,  # cents
+                        amount=amount, 
                         currency="usd",
                         customer=userprofile.stripe_customer_id
                     )
                 else:
                     # charge once off on the token
                     charge = stripe.Charge.create(
-                        amount=amount,  # cents
+                        amount=amount, 
                         currency="usd",
                         source=token
                     )
@@ -514,3 +515,6 @@ class RequestRefundView(View):
             except ObjectDoesNotExist:
                 messages.info(self.request, "This order does not exist.")
                 return redirect("core:request-refund")
+                
+                
+                

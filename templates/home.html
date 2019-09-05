@@ -1,9 +1,8 @@
 {% extends "base.html" %} {% block content %}
 <main>
-  <div class="container-fluid">
-
+  <div class="container">
     <!--Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark mdb-color lighten-3 mt-3 mb-5">
+    <nav class="navbar navbar-expand-lg navbar-dark mdb-color lighten-3 mt-3 mb-1">
 
       <!-- Navbar brand -->
       <span class="navbar-brand">Categories:</span>
@@ -14,7 +13,7 @@
         </button>
 
       <!-- Collapsible content -->
-      <div class="collapse navbar-collapse" id="basicExampleNav">
+      <div class="collapse navbar-collapse" id="basicNav">
 
         <!-- Links -->
         <ul class="navbar-nav mr-auto">
@@ -70,20 +69,14 @@
               <!-- Content -->
               <div class="text-center white-text mx-5 wow fadeIn">
                 <h1 class="mb-4">
-               
+                 <a href="#">Season Sale</a> </br>
                 </h1>
-                <a href="#">Shop Now</a>
-                <a href="#">Learn More</a>
               </div>
               <!-- Content -->
-
             </div>
             <!-- Mask & flexbox options-->
-
           </div>
         </div>
-        <!--/First slide-->
-
         <!--Second slide-->
         <div class="carousel-item">
           <div class="view" style="background-image: url('https://images.pexels.com/photos/428338/pexels-photo-428338.jpeg?cs=srgb&dl=casual-cute-elegant-428338.jpg&fm=jpg'); background-repeat: no-repeat; background-size: cover;">
@@ -93,37 +86,25 @@
 
               <!-- Content -->
               <div class="text-center white-text mx-5 wow fadeIn">
-               
+               <h1 class="mb-4">
+                 <a href="#">Latest Collection</a> </br>
+                </h1>
               </div>
-                 <a href="#">Shop Now</a>
-                <a href="#">Learn More</a>
             </div>
-     
-
           </div>
         </div>
-        <!--/Second slide-->
-
         <!--Third slide-->
         <div class="carousel-item">
           <div class="view" style="background-image: url('https://images.pexels.com/photos/428340/pexels-photo-428340.jpeg?cs=srgb&dl=adult-dark-facial-expression-428340.jpg&fm=jpg'); background-repeat: no-repeat; background-size: cover;">
 
             <!-- Mask & flexbox options-->
             <div class="mask rgba-black-strong d-flex justify-content-center align-items-center">
-
-              <!-- Content -->
-                <a href="#">Shop Now</a>
-                <a href="#">Learn More</a>
-           
-              <!-- Content -->
-
+                  <h1 class="mb-4">
+                 <a href="#">Shop now</a> </br>
+                </h1>
             </div>
-            <!-- Mask & flexbox options-->
-
           </div>
         </div>
-        <!--/Third slide-->
-
       </div>
       <!--/.Slides-->
 
@@ -136,31 +117,26 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
-      <!--/.Controls-->
-
+      <!--End of Controls-->
     </div>
-    <!--/.Carousel Wrapper-->
+    <!-- End of Carousel Wrapper-->
 
-
-    <!--Section: Products v.3-->
-    <section class="text-center mb-4">
-
+    <!--Section: Products -->
+    <section class="text-center mb-4 mt-4">
       <div class="row wow fadeIn">
-
         {% for item in object_list %}
         <div class="col-lg-3 col-md-6 mb-4">
-
-          <div class="card">
-
+          <div class="card" style="height:400px">
             <div class="view overlay">
-              {% comment %} <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg" class="card-img-top" {% endcomment %} <img src="{{ item.image.url }}" class="card-img-top">
+              {% comment %} <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg" class="card-img-top" {% endcomment %} 
+              <img src="{{ item.image.url }}" class="card-img-top">
               <a href="{{ item.get_absolute_url }}">
                 <div class="mask rgba-white-slight"></div>
               </a>
             </div>
-
+          <!--product image -->
             <div class="card-body text-center">
-              <a href="" class="grey-text">
+              <a href="{{ item.get_absolute_url }}" class="grey-text">
                 <h5>{{ item.get_category_display }}</h5>
               </a>
               <h5>
@@ -180,20 +156,14 @@
                   {% endif %}
                   </strong>
               </h4>
-
             </div>
-
           </div>
-
         </div>
-        {% endfor %}
-      </div>
-
+    {% endfor %}
     </section>
-    <!--Section: Products v.3-->
+    <!-- End ofSection: Products-->
 
     <!--Pagination-->
-
     {% if is_paginated %}
     <nav class="d-flex justify-content-center wow fadeIn">
       <ul class="pagination pg-blue">
