@@ -82,7 +82,9 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 
 # CRISPY FORMS
-
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 DATABASES = {'default': dj_database_url.parse('postgres://svfgilawsqtkgd:2ebf7427fbb222594def4303bd257ce7debf08d11503d68402fdc4be3cc96778@ec2-174-129-229-106.compute-1.amazonaws.com:5432/d7b5271hpb2prj')}
