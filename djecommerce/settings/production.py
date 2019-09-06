@@ -12,17 +12,10 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 SECRET_KEY = 'kobl@t=yw9d*0y%jt2gjnq78=u!z_rrxb&w8e47l!(jz@m79zy'
-
+DATABASE_URL = config('DATABASE_URL')
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST'),
-        'PORT': ''
-    }
+    'default': dj_database_url.parse(DATABASE_URL)
 }
 
 STRIPE_PUBLIC_KEY = config('STRIPE_LIVE_PUBLIC_KEY')
