@@ -9,7 +9,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 SECRET_KEY = config('SECRET_KEY')
 
 ALLOWED_HOSTS = [
-    os.environ.get('localhost', '127.0.0.1'),
+    os.environ.get('*'),
     'djangoshop-mt.herokuapp.com/'
 ]
 
@@ -40,6 +40,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'djecommerce.urls'
