@@ -1,15 +1,13 @@
 import os
 from decouple import config
-import dj_database_url
+import django_heroku
 
-BASE_DIR = os.path.dirname(os.path.dirname(
-    os.path.dirname(os.path.abspath(__file__))))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 SECRET_KEY = config('SECRET_KEY')
 
-
 INSTALLED_APPS = [
-    'django.contrib.admin', 
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -22,6 +20,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'crispy_forms',
     'django_countries',
+
     'stripe',
     'core',
 ]
@@ -34,8 +33,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware'
-
 ]
 
 ROOT_URLCONF = 'djecommerce.urls'
@@ -66,10 +63,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 MEDIA_URL = '/media/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static_in_env')]
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
 
 # Auth
@@ -82,9 +81,8 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 
 # CRISPY FORMS
+
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-
-DATABASES = {'default': dj_database_url.parse('postgres://svfgilawsqtkgd:2ebf7427fbb222594def4303bd257ce7debf08d11503d68402fdc4be3cc96778@ec2-174-129-229-106.compute-1.amazonaws.com:5432/d7b5271hpb2prj')}
+django_heroku.settings(locals())
