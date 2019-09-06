@@ -1,7 +1,8 @@
 from .base import *
+import dj_database_url
 
 DEBUG = config('DEBUG', cast=bool)
-ALLOWED_HOSTS = ['2c7e37e20b7b4c91bc8f3bcf6508b0b0.vfs.cloud9.us-east-1.amazonaws.com', 'www.your-website.com']
+ALLOWED_HOSTS = ['*']
 
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
@@ -9,6 +10,7 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'}
 ]
+
 
 DATABASES = {
     'default': {

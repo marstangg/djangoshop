@@ -1,10 +1,17 @@
 import os
 from decouple import config
 import django_heroku
+import dj_database_url
+
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 SECRET_KEY = config('SECRET_KEY')
+
+ALLOWED_HOSTS = [
+    os.environ.get('localhost', '127.0.0.1'),
+    'djangoshop-mt.herokuapp.com/'
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -77,6 +84,7 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend'
 )
+
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 
@@ -84,5 +92,3 @@ LOGIN_REDIRECT_URL = '/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-
-django_heroku.settings(locals())

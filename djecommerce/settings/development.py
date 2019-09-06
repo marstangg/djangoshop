@@ -1,7 +1,7 @@
 from .base import *
 
 DEBUG = True
-ALLOWED_HOSTS = ['2c7e37e20b7b4c91bc8f3bcf6508b0b0.vfs.cloud9.us-east-1.amazonaws.com', "https://djangoshop-mt.herokuapp.com/"]
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS += [
     'debug_toolbar'
