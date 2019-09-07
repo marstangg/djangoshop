@@ -11,7 +11,7 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'}
 ]
 
-SECRET_KEY = 'kobl@t=yw9d*0y%jt2gjnq78=u!z_rrxb&w8e47l!(jz@m79zy'
+SECRET_KEY = config('SECRET_KEY')
 DATABASE_URL = config('DATABASE_URL')
 
 DATABASES = {
@@ -20,3 +20,8 @@ DATABASES = {
 
 STRIPE_PUBLIC_KEY = config('STRIPE_LIVE_PUBLIC_KEY')
 STRIPE_SECRET_KEY = config('STRIPE_LIVE_SECRET_KEY')
+
+UPLOADCARE = {
+    'pub_key': config('UPLOADCARE_PUBLIC_KEY'),
+    'secret' :  config('UPLOADCARE_SECRET_KEY')
+}

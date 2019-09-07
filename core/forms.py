@@ -1,7 +1,7 @@
 from django import forms
 from django_countries.fields import CountryField
 from django_countries.widgets import CountrySelectWidget
-
+from pyuploadcare.dj.forms import ImageField
 
 PAYMENT_CHOICES = (
     ('S', 'Stripe'),

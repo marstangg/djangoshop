@@ -8,6 +8,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 
 SECRET_KEY = 'kobl@t=yw9d*0y%jt2gjnq78=u!z_rrxb&w8e47l!(jz@m79zy'
 
+
 ALLOWED_HOSTS = [
     os.environ.get('*'),
     'djangoshop-mt.herokuapp.com/'
@@ -27,7 +28,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'crispy_forms',
     'django_countries',
-
+    'pyuploadcare.dj',
     'stripe',
     'core',
 ]
@@ -93,3 +94,12 @@ LOGIN_REDIRECT_URL = '/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+# UPLOADCARE = {
+#     'pub_key': '29e12f60593efff963b8',
+#     'secret': '29e12f60593efff963b8'
+# }
+
+UPLOADCARE = {
+    'pub_key': config('UPLOADCARE_PUBLIC_KEY'),
+    'secret' :  config('UPLOADCARE_SECRET_KEY')
+}
