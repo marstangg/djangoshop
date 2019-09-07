@@ -7,8 +7,6 @@ from django_countries.fields import CountryField
 from pyuploadcare.dj.models import ImageField
 
 
-
-
 CATEGORY_CHOICES = (
     ('S', 'Shirt'),
     ('SW', 'Sport wear'),
@@ -44,7 +42,7 @@ class Item(models.Model):
     label = models.CharField(choices=LABEL_CHOICES, max_length=1)
     slug = models.SlugField()
     description = models.TextField()
-    image = ImageField()
+    photo = ImageField()
 
 
     def __str__(self):
