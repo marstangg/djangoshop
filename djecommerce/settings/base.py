@@ -28,8 +28,6 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'crispy_forms',
     'django_countries',
-    
-    'pyuploadcare.dj',
     'stripe',
     'core',
 ]
@@ -94,9 +92,4 @@ LOGIN_REDIRECT_URL = '/'
 # CRISPY FORMS
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-
-UPLOADCARE = {
-    'pub_key': '29e12f60593efff963b8',
-    'secret': '29e12f60593efff963b8'
-}
 
