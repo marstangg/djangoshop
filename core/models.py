@@ -63,7 +63,6 @@ class Item(models.Model):
             'slug': self.slug
         })
 
-
 class OrderItem(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
                              on_delete=models.CASCADE)
