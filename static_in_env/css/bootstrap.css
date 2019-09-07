@@ -89,7 +89,7 @@ abbr[data-original-title] {
   text-decoration-skip-ink: none;
 }
 
-.blue-text { font-size:30px;}
+.blue-text { font-size:28px;}
 
 address {
   margin-bottom: 1rem;
@@ -4637,7 +4637,7 @@ input[type="button"].btn-block {
 }
 
 .card-img-overlay {
-  position: absolute;
+  position:relative;
   top: 0;
   right: 0;
   bottom: 0;
@@ -4651,7 +4651,7 @@ border-radius: calc(0.25rem - 1px);
 }
 
 .card-img-top {
-  object-fit: cover;
+  object-fit: cover ;
   height: 20vw;
   width: 100%;
   border-top-left-radius: calc(0.25rem - 1px);
@@ -7988,7 +7988,7 @@ button.bg-dark:focus {
 
 .mt-3,
 .my-3 {
-  margin-top:1rem !important;
+  margin-top:2rem !important;
 }
 
 .mr-3,
