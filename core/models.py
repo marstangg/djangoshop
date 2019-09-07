@@ -6,6 +6,11 @@ from django.shortcuts import reverse
 from django_countries.fields import CountryField
 from pyuploadcare.dj.models import ImageField
 
+class Candidate(models.Model):
+    photo = ImageField(blank=True, manual_crop="")
+
+
+
 
 CATEGORY_CHOICES = (
     ('S', 'Shirt'),
