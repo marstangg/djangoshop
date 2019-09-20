@@ -14,7 +14,7 @@ import random
 import string
 import stripe
 
-stripe.api_key = 'pk_live_vQHdZRsweoNg63U2tZTW21zX00wFXw1TKo'
+stripe.api_key = settings.STRIPE_SECRET_KEY
 
 
 def create_ref_code():
@@ -212,7 +212,8 @@ class PaymentView(View):
         if order.billing_address:
             context = {
                 'order': order,
-                'DISPLAY_COUPON_FORM': False
+                'DISPLAY_COUPON_FORM': False,
+                 'stripe_public_key' : settings.STRIPE_PUBLIC_KEY
             }
             userprofile = self.request.user.userprofile
             if userprofile.one_click_purchasing:
