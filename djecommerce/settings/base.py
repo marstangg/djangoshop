@@ -3,10 +3,10 @@ from decouple import config
 import django_heroku
 import dj_database_url
 
-
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 SECRET_KEY = 'kobl@t=yw9d*0y%jt2gjnq78=u!z_rrxb&w8e47l!(jz@m79zy'
+
 
 
 ALLOWED_HOSTS = [
@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'django_countries',
     'stripe',
     'core',
+    'pyuploadcare.dj'
 ]
 
 MIDDLEWARE = [
@@ -93,3 +94,7 @@ LOGIN_REDIRECT_URL = '/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+UPLOADCARE = { 
+    'pub_key' : config("UPLOADCARE_PUBLIC_KEY"),
+    'secret' : config("UPLOADCARE_SECRET_KEY"),
+    }
